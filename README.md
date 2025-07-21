@@ -10,3 +10,21 @@ The process involves:
 - Transforming the grayscale image to LAB color space.
 - Feeding the lightness channel (*L*) into the model to predict the *a* and *b* channels (chrominance).
 - Combining these channels to produce a full-color image.
+
+## Installation
+
+1. Install dependencies:
+   - Install NumPy and OpenCV:
+     ```bash
+     pip install numpy opencv-python
+     ```
+
+2. Download the necessary model files and save them in the same folder:
+   - [colorization_deploy_v2.prototxt](https://github.com/richzhang/colorization/tree/caffe/colorization/models)
+   - [pts_in_hull.npy](https://github.com/richzhang/colorization/blob/caffe/colorization/resources/pts_in_hull.npy)
+   - [colorization_release_v2.caffemodel](https://www.dropbox.com/s/dx0qvhhp5hbcx7z/colorization_release_v2.caffemodel?dl=1)
+
+3. Giving credits to Richard Zhang for discovering the colorization technique, Check below for more details
+   - https://github.com/opencv/opencv/blob/master/samples/dnn/colorization.py
+   - http://richzhang.github.io/colorization/
+   - https://github.com/richzhang/colorization/
