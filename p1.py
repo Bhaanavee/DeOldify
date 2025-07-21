@@ -50,3 +50,14 @@ colorized=np.clip(colorized,0,1)
 
 colorized=(255* colorized).astype("uint8")
 
+cv2.namedWindow("Original", cv2.WINDOW_NORMAL)
+cv2.namedWindow("Colorized", cv2.WINDOW_NORMAL)
+
+# Set the window sizes to desired dimensions
+cv2.resizeWindow("Original", 800, 400)
+cv2.resizeWindow("Colorized", 800, 400)
+
+cv2.imshow("Original", image)
+cv2.imshow("Colorized", colorized)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
