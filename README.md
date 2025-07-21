@@ -28,3 +28,22 @@ The process involves:
    - https://github.com/opencv/opencv/blob/master/samples/dnn/colorization.py
    - http://richzhang.github.io/colorization/
    - https://github.com/richzhang/colorization/
+
+## Usage
+
+1. Update the directories in the code according to your setup.
+
+2. To run the script:
+   - Open Command Prompt.
+   - Navigate to the folder containing the code and model files using the `cd` command.
+     ```bash
+     cd /Users/bhaanaveecs/Documents/Colouriser
+     ```
+   - Run the script and provide the path to the black-and-white image as a parameter:
+     ```bash
+     python p1.py --image images/eye.jpeg
+     ```
+
+## References
+- [Richard Zhang Colorization Project](http://richzhang.github.io/colorization/)
+- [OpenCV Colorization Sample](https://github.com/opencv/opencv/blob/master/samples/dnn/colorization.py)
