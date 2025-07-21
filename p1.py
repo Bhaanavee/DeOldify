@@ -28,3 +28,15 @@ pts=pts.transpose().reshape(2,313,1,1)
 net.getLayer(class8).blobs=[pts.astype("float32")]
 net.getLayer(conv8).blobs=[np.full([1,313],2.606,dtype="float32")]
 
+image=cv2.imread(args["image"])
+scaled=image.astype("float32")/255.0
+lab=cv2.cvtColor(scaled,cv2.COLOR_BGR2LAB)
+
+resized=cv2.resize(lab,(224,224))
+L=cv2.split(resized)[0]
+L-=50
+
+print("Colorizing the image")
+net.setInput(cv2.dnn.blobFromImage(L))
+ab=net.forward()[0,:,:,:].transpose((1,2,0))
+
