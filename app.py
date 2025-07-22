@@ -3,10 +3,11 @@ import argparse
 import os
 import cv2
 
-DIR=r'/Users/bhaanaveecs/Documents/BW to Color'
-PROTOTXT=os.path.join(DIR,r"For Colorisation/colorization_deploy_v2.prototxt")
-POINTS=os.path.join(DIR,r"For Colorisation/pts_in_hull.npy")
-MODEL=os.path.join(DIR,r"For Colorisation/colorization_release_v2.caffemodel")
+# Update these paths to point to your current directory
+DIR = r'/Users/bhaanaveecs/Documents/Colouriser'
+PROTOTXT = os.path.join(DIR, "For Colorisation/colorization_deploy_v2.prototxt")
+POINTS = os.path.join(DIR, "For Colorisation/pts_in_hull.npy")
+MODEL = os.path.join(DIR, "For Colorisation/colorization_release_v2.caffemodel")
 
 if not os.path.exists(MODEL):
     print(f"Error: Model file not found at {MODEL}")
@@ -36,7 +37,7 @@ resized=cv2.resize(lab,(224,224))
 L=cv2.split(resized)[0]
 L-=50
 
-print("Colorizing the image")
+print("Colorising the image")
 net.setInput(cv2.dnn.blobFromImage(L))
 ab=net.forward()[0,:,:,:].transpose((1,2,0))
 
@@ -51,13 +52,13 @@ colorized=np.clip(colorized,0,1)
 colorized=(255* colorized).astype("uint8")
 
 cv2.namedWindow("Original", cv2.WINDOW_NORMAL)
-cv2.namedWindow("Colorized", cv2.WINDOW_NORMAL)
+cv2.namedWindow("Colorised", cv2.WINDOW_NORMAL)
 
 # Set the window sizes to desired dimensions
 cv2.resizeWindow("Original", 800, 400)
-cv2.resizeWindow("Colorized", 800, 400)
+cv2.resizeWindow("Colorised", 800, 400)
 
 cv2.imshow("Original", image)
-cv2.imshow("Colorized", colorized)
+cv2.imshow("Colorised", colorized)
 cv2.waitKey(0)
 cv2.destroyAllWindows()

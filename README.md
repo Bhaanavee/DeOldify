@@ -13,18 +13,26 @@ The process involves:
 
 ## Installation
 
-1. Install dependencies:
-   - Install NumPy and OpenCV:
-     ```bash
-     pip install numpy opencv-python
-     ```
+1. Set up a Python virtual environment (recommended):
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate  # On macOS/Linux
+   # or
+   venv\Scripts\activate  # On Windows
+   ```
 
-2. Download the necessary model files and save them in the same folder:
+2. Install required dependencies:
+   ```bash
+   pip3 install numpy
+   pip3 install opencv-python
+   ```
+
+3. Download the necessary model files and save them in the same folder:
    - [colorization_deploy_v2.prototxt](https://github.com/richzhang/colorization/tree/caffe/colorization/models)
    - [pts_in_hull.npy](https://github.com/richzhang/colorization/blob/caffe/colorization/resources/pts_in_hull.npy)
    - [colorization_release_v2.caffemodel](https://www.dropbox.com/s/dx0qvhhp5hbcx7z/colorization_release_v2.caffemodel?dl=1)
 
-3. Giving credits to Richard Zhang for discovering the colorization technique, Check below for more details
+4. Giving credits to Richard Zhang for discovering the colorization technique, Check below for more details
    - https://github.com/opencv/opencv/blob/master/samples/dnn/colorization.py
    - http://richzhang.github.io/colorization/
    - https://github.com/richzhang/colorization/
@@ -43,6 +51,12 @@ The process involves:
      ```bash
      python p1.py --image images/eye.jpeg
      ```
+
+## Screenshots
+
+![Image Description](images/output1.png)
+![Image Description](images/output2.png)
+
 
 ## References
 - [Richard Zhang Colorization Project](http://richzhang.github.io/colorization/)
