@@ -49,13 +49,14 @@ The process involves:
      ```
    - Run the script and provide the path to the black-and-white image as a parameter:
      ```bash
-     python p1.py --image images/eye.jpeg
+     python app.py --image images/eye.jpeg
      ```
 
 ## Screenshots
 
-![Image Description](images/output1.png)
 ![Image Description](images/output2.png)
+![Image Description](images/output1.png)
+
 
 
 ## References
