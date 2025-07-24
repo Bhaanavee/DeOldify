@@ -62,8 +62,10 @@ The process involves:
 
 The application provides a user-friendly interface to upload and colorize images:
 
+![WebApp](images/output1.png)
 ![Streamlit Interface](images/output2.png)
-![Colorized Output](images/output1.png)
+![Image](images/output3.png)
+
 
 ## References
 - [Richard Zhang Colorization Project](http://richzhang.github.io/colorization/)
