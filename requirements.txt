@@ -1,3 +1,4 @@
 colorgram.py
 Pillow
 opencv-python-headless
+protobuf
