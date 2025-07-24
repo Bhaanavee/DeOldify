@@ -1,15 +1,16 @@
 # DeOldify
 
-This project demonstrates how to colorize black-and-white images using a pre-trained deep learning model with OpenCV and Caffe. The model was developed by Richard Zhang et al., and it automatically adds color to grayscale images by predicting the a and b color channels in the LAB color space. This technique is useful for revitalizing old photos or generating color data from grayscale images.
+This project demonstrates how to colorize black-and-white images using a pre-trained deep learning model with OpenCV, Caffe, and Streamlit. The model was developed by Richard Zhang et al., and it automatically adds color to grayscale images by predicting the a and b color channels in the LAB color space. This technique is useful for revitalizing old photos or generating color data from grayscale images using a user-friendly web interface.
 
 ## Overview
-This project aims to take black-and-white (grayscale) images and convert them to color using a deep learning model. The Caffe-based model predicts the chrominance values (color) while the lightness channel is preserved from the grayscale image. This technique uses machine learning to infer the most likely colors for various regions of an image.
+This project aims to take black-and-white (grayscale) images and convert them to color using a deep learning model. The Caffe-based model predicts the chrominance values (color) while the lightness channel is preserved from the grayscale image. This technique uses machine learning to infer the most likely colors for various regions of an image and displays the results using Streamlit.
 
 The process involves:
 - Loading a pre-trained model that was trained on thousands of color images.
 - Transforming the grayscale image to LAB color space.
 - Feeding the lightness channel (*L*) into the model to predict the *a* and *b* channels (chrominance).
 - Combining these channels to produce a full-color image.
+- Displaying the original and colorized images using Streamlit.
 
 ## Installation
 
@@ -25,6 +26,7 @@ The process involves:
    ```bash
    pip3 install numpy
    pip3 install opencv-python
+   pip3 install streamlit
    ```
 
 3. Download the necessary model files and save them in the same folder:
@@ -39,25 +41,29 @@ The process involves:
 
 ## Usage
 
-1. Update the directories in the code according to your setup.
+1.  Ensure all necessary model files are in the correct directories as defined in `app.py`.
 
-2. To run the script:
-   - Open Command Prompt.
-   - Navigate to the folder containing the code and model files using the `cd` command.
-     ```bash
-     cd /Users/bhaanaveecs/Documents/Colouriser
-     ```
-   - Run the script and provide the path to the black-and-white image as a parameter:
-     ```bash
-     python app.py --image images/eye.jpeg
-     ```
+2.  To run the Streamlit app:
+    - Open Command Prompt or Terminal.
+    - Navigate to the folder containing the code and model files using the `cd` command.
+      ```bash
+      cd /Users/bhaanaveecs/Documents/Colouriser
+      ```
+    - Run the Streamlit app:
+      ```bash
+      streamlit run app.py
+      ```
+
+3.  Open your web browser and go to the address provided by Streamlit (usually `http://localhost:8501`).
+
+4.  Upload a black-and-white image through the Streamlit interface and view the colorized result. You can also download the colorized image.
 
 ## Screenshots
 
-![Image Description](images/output2.png)
-![Image Description](images/output1.png)
+The application provides a user-friendly interface to upload and colorize images:
 
-
+![Streamlit Interface](images/output2.png)
+![Colorized Output](images/output1.png)
 
 ## References
 - [Richard Zhang Colorization Project](http://richzhang.github.io/colorization/)
