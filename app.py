@@ -5,11 +5,9 @@ import os
 from io import BytesIO
 from PIL import Image
 
-DIR = r'/Users/bhaanaveecs/Documents/Colouriser'
-PROTOTXT = os.path.join(DIR, "For Colorisation/colorization_deploy_v2.prototxt")
-POINTS = os.path.join(DIR, "For Colorisation/pts_in_hull.npy")
-MODEL = os.path.join(DIR, "For Colorisation/colorization_release_v2.caffemodel")
-
+PROTOTXT = "For Colorisation/colorization_deploy_v2.prototxt"
+POINTS = "For Colorisation/pts_in_hull.npy"
+MODEL = "For Colorisation/colorization_release_v2.caffemodel"
 
 net = cv2.dnn.readNetFromCaffe(PROTOTXT, MODEL)
 pts = np.load(POINTS)
