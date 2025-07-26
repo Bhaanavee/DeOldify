@@ -71,6 +71,7 @@ The application provides a user-friendly interface to upload and colorize images
 
 ![WebApp](images/output1.png)
 ![Streamlit Interface](images/output2.png)
+![Image](images/output5.png)
 ![Image](images/output3.png)
 ![Image](images/output4.png)
 
